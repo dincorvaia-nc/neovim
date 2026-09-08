@@ -1,0 +1,38 @@
+-- MTRNS language server for *.mtrns.yml (Neovim 0.11+)
+return {}
+-- return {
+--   "neovim/nvim-lspconfig",
+--   config = function()
+--     -- 1. Filetype association
+--     vim.filetype.add({ pattern = { [".*%.mtrns%.yml"] = "mtrns" } })
+--
+--     -- 2. Make mtrns render exactly like yaml (treesitter highlight + indent)
+--     vim.treesitter.language.register("yaml", "mtrns")
+--
+--     vim.api.nvim_create_autocmd("FileType", {
+--       pattern = "mtrns",
+--       callback = function(args)
+--         -- start the yaml treesitter highlighter on this buffer
+--         pcall(vim.treesitter.start, args.buf, "yaml")
+--         vim.bo[args.buf].syntax = "yaml" -- legacy syntax fallback
+--         vim.bo[args.buf].commentstring = "# %s"
+--         vim.bo[args.buf].expandtab = true
+--         vim.bo[args.buf].shiftwidth = 2
+--       end,
+--     })
+--
+--     -- 3. LSP server
+--     vim.lsp.config("mtrns", {
+--       cmd = {
+--         "node",
+--
+--         vim.fn.expand("~/Documents/GitHub/mtrns-lsp/packages/server/dist/server.js"),
+--         "--stdio",
+--       },
+--       filetypes = { "mtrns" },
+--       root_markers = { ".mtrns", ".git" },
+--       init_options = { schemaPath = nil },
+--     })
+--     vim.lsp.enable("mtrns")
+--   end,
+-- }
