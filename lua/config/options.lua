@@ -3,6 +3,10 @@
 
 -- Add any additional options here
 --
+-- Read by lazyvim.plugins.extras.lang.php at load time, so it has to be set here
+-- rather than in a plugin spec.
+vim.g.lazyvim_php_lsp = "intelephense"
+
 vim.filetype.add({
   extension = {
     cls = "apex",
